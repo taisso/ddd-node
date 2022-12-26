@@ -151,10 +151,10 @@ describe("Order repository test", () => {
   it("should findAll order", async () => {
     const orderRepository = new OrderRepository();
     const { order: order1 } = await orderFaker();
-    //const { order: order2 } = await orderFaker();
+    const { order: order2 } = await orderFaker();
 
     const foundOrder = await orderRepository.findAll()
 
-    // expect([order1]).toEqual(foundOrder);
+    expect([order1, order2]).toEqual(foundOrder);
   });
 });
